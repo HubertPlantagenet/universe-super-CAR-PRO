@@ -32,5 +32,8 @@
     <ClCompile Include="Move.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="GithubTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

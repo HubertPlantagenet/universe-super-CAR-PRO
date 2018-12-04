@@ -117,7 +117,7 @@
     <ClInclude Include="__vm\.Mycar2.0.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GithubTest.cpp" />
+    <ClCompile Include="FindWay.cpp" />
     <ClCompile Include="Move.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

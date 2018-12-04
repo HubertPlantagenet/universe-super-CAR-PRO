@@ -2,6 +2,8 @@
 #ifndef  __FindWay
 #define  __FindWay
 
+#include<Arduino.h>
+
 //  红外探头数据接受口
 //  接口可以更改
 #define FindLEFT1   31
@@ -26,6 +28,7 @@ private:
 
 public:
 	State GetState();		//通过红外传感器确定应该执行的状态
+
 	Find();
 	~Find();
 };

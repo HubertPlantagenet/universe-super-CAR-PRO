@@ -3,6 +3,10 @@
 #include<pt.h>
 #include"Move.h"
 /*
+
+Github 版本
+
+
 #define ENA 5   //使能控制  紫
 #define ENB 6   //控速      红
 #define IN1 46  //控方向    灰  白  黑 棕

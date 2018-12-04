@@ -35,6 +35,7 @@ private:
 	void buck();            //后退函数  通过GO函数调用
 	void straight();        //直走函数  通过GO函数调用
 public:
+	Mode Face;		//小车面朝的方向
 	Mode mode;      //小车当前模式
 	char ch;                             //用于接受命令字符
 	void GO(u8 direction);               //1 直走  2 后退   speed 控制速度

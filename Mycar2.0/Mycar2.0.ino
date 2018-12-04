@@ -35,12 +35,6 @@ O K    ×óÂÖ¼ÓËÙ¼õËÙ
 #define OFF  LOW
 #define Left_turn 1
 #define Right_turn 2
-#define FindLEFT3   31
-#define FindLEFT2  33
-#define FindLEFT1  35
-#define FindRIGHT1  37
-#define FindRIGHT2  39
-#define FindRIGHT3  41
 #define time1 1
 #define time2 5
 unsigned Turn_time_A = 800;

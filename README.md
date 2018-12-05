@@ -11,7 +11,6 @@
 
 #### RXTX-2.2win64安装方法
 > For a JDK installation:
-
-Copy RXTXcomm.jar ---> <JAVA_HOME>\jre\lib\ext
-Copy rxtxSerial.dll ---> <JAVA_HOME>\jre\bin
-Copy rxtxParallel.dll ---> <JAVA_HOME>\jre\bin
+  Copy RXTXcomm.jar ---> <JAVA_HOME>\jre\lib\ext
+  Copy rxtxSerial.dll ---> <JAVA_HOME>\jre\bin
+  Copy rxtxParallel.dll ---> <JAVA_HOME>\jre\bin

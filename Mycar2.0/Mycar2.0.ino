@@ -40,6 +40,10 @@ O K    左轮加速减速
 unsigned Turn_time_A = 800;
 unsigned Turn_time_D = 700;
 
+Car Mycar;              //只在源文件
+static struct pt pt1, pt2;
+pt_timer servotimer1;
+pt_timer servotimer2;
 
 class Turn  // 转向相关
 {
@@ -62,10 +66,7 @@ Turn::~Turn()
 {
 }
 Turn turn;
-Car Mycar;              //只在源文件
-static struct pt pt1, pt2;
-pt_timer servotimer1;
-pt_timer servotimer2;
+
 //绘蓝杯寻迹转向函数
 	 /*void ninty_turn(u8 direction, u8 time)
 {
@@ -80,12 +81,25 @@ static int mission1(struct pt *pt)
 	{
 		//线程循环开始
 		Mycar.ch = ' ';  //每次循环初始化 ch 
+		Mycar.ch2 = ' ';  //每次循环初始化 ch2 
 //		Serial1.println("MOVE");
 		if (Serial1.available())
 			Mycar.ch = Serial1.read();
+		if (Serial2.available())
+		{
+	//		Serial1.println("Receive from Serial2");
+			// test 部分  Mycar.ch2 用来接收无线通信的指令
+			Mycar.ch2 = Serial2.read();
+			Serial1.print("ch2 = ");
+			Serial1.println(Mycar.ch2);
+		}
 		PT_YIELD(pt);
 		if (Mycar.ch == ' ')
 			continue;
+		//if (Mycar.ch2 != ' ')
+		//{
+
+		//}
 		if (Mycar.ch == '!')
 		{
 			Mycar.Stop();
@@ -215,7 +229,7 @@ static int mission1(struct pt *pt)
 		{
 			//绘蓝杯寻迹部分
 			//test 部分
-			if (Mycar.ch == 'A')
+			/*if (Mycar.ch == 'A')
 			{
 				Mycar.Turn_in_situ(Left_turn);
 				Serial1.println("Left Turn_time _ begin");
@@ -250,7 +264,9 @@ static int mission1(struct pt *pt)
 				Serial1.print(Turn_time_A);
 				Serial1.println(Turn_time_D);
 				continue;
-			}
+			}*/ 
+
+
 		}
 	}//线程循环结束
 	PT_END(pt);    //线程结束
@@ -314,6 +330,7 @@ void setup() {
 	// put your setup code here, to run once:
 	Serial.begin(9600);
 	Serial1.begin(9600);   //设置蓝牙通讯波特率
+	Serial2.begin(9600);   //设置无线通讯的波特率
 	FlexiTimer2::set(750, 1.0 / 1000, Return_ch); //0.75秒 打印一次当前的Mycar.ch
 //	FlexiTimer2::start();
 	pinMode(13, OUTPUT);

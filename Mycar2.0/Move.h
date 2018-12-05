@@ -38,6 +38,7 @@ public:
 	Mode Face;		//小车面朝的方向
 	Mode mode;      //小车当前模式
 	char ch;                             //用于接受命令字符
+	char ch2;                             //用于接受命令字符
 	void GO(u8 direction);               //1 直走  2 后退   speed 控制速度
 	void Turn_in_situ(u8 direction);	 // 1 左 2 右  转向
 	void Stop();						 //停止
@@ -65,6 +66,7 @@ public:
 		IN4 = 52;
 		LED = 3;
 		ch = ' ';
+		ch2 = ' ';
 		LED_on_off(ON);
 		pinMode(ENA, OUTPUT);
 		pinMode(ENB, OUTPUT);
